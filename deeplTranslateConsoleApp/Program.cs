@@ -61,7 +61,7 @@ namespace deeplTranslateConsoleApp
                     await checkAccountUsageAsync(translator);
                     return true;
                 case "4":
-                    await printLangCodesAsync(targetLangList, sourceLangList);
+                    printLangCodesAsync(targetLangList, sourceLangList);
                     return true;
                 case "5":
                     return false;
@@ -213,7 +213,7 @@ namespace deeplTranslateConsoleApp
             }
         }
 
-        private static Task printLangCodesAsync(List<DeepL.Model.TargetLanguage> targetLangList, List<DeepL.Model.SourceLanguage> sourceLangList)
+        private static void printLangCodesAsync(List<DeepL.Model.TargetLanguage> targetLangList, List<DeepL.Model.SourceLanguage> sourceLangList)
         {
             Console.Clear();
 
@@ -239,7 +239,6 @@ namespace deeplTranslateConsoleApp
             }
 
             exitToMainMenu();
-            return Task.CompletedTask;
         }
 
         private static void exitToMainMenu()
